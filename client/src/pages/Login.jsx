@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import API from "../api/axios";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../features/auth/authSlice";
 import { FiMail, FiLock } from "react-icons/fi";
@@ -28,8 +28,8 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+      const res = await API.post(
+        "/auth/login",
         formData,
       );
 

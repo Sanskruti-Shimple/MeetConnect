@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+import API from "../api/axios";
 import { FiUser, FiMail, FiLock } from "react-icons/fi";
 import toast from "react-hot-toast";
 
@@ -26,8 +26,8 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      await axios.post(
-        "http://localhost:5000/api/auth/register",
+      await API.post(
+        "/auth/register",
         formData
       );
 
