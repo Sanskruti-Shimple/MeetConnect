@@ -23,7 +23,8 @@ export const registerUser = async (req, res) => {
     });
 
   } catch (error) {
-    res.status(500).json({ message: "error.message" });
+    console.error("Register Error:", error);
+    res.status(500).json({ message: "Server Error", error: error.message });
   }
 };
 
@@ -45,9 +46,17 @@ export const loginUser = async (req, res) => {
       { expiresIn: "1d" }
     );
 
-    res.json({ token });
+    res.json({ 
+      token, 
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email
+      } 
+    });
 
   } catch (error) {
-    res.status(500).json({ message: "error.message" });
+    console.error("Login Error:", error);
+    res.status(500).json({ message: "Server Error", error: error.message });
   }
 };
