@@ -13,6 +13,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Ensure DB is connected for every request in serverless
+app.use(async (req, res, next) => {
+  if (mongoose.connection.readyState >= 1) {
+    return next();
+  }
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB Connected Successfully");
+  } catch (err) {
+    console.error("MongoDB Connection Error:", err);
+  }
+  next();
+});
+
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/interviews", interviewRoutes);
@@ -41,10 +55,5 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 
-// Ensure DB is connected for every request in serverless
-app.use(async (req, res, next) => {
-  await connectDB();
-  next();
-});
-
+// Removed redundant middleware
 export default app;
