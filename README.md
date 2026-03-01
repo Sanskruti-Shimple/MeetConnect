@@ -114,8 +114,4 @@ To run this project locally, follow these steps:
 
 ## 📸 Screenshots
 
-_(Add screenshots here after uploading to GitHub)_
-
-
-
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5853639d-fc01-4215-a303-ad41c72c9c0e" />
