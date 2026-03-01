@@ -105,16 +105,16 @@ To run this project locally, follow these steps:
    Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal).
 
 ---
-
-## 📸 Screenshots
-
-_(Add screenshots here after uploading to GitHub)_
-
----
  
 ## 🔗 Access WebApp Here:
 
 **Link:** https://meet-connect-xi.vercel.app/login 
+
+---
+
+## 📸 Screenshots
+
+_(Add screenshots here after uploading to GitHub)_
 
 
 
