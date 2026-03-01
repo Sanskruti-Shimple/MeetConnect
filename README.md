@@ -111,13 +111,3 @@ To run this project locally, follow these steps:
 _(Add screenshots here after uploading to GitHub)_
 
 ---
-
-## 😎 Authors
-
-- **Sanskruti** - [GitHub Profile](https://github.com/your-username)
-
----
-
-## 📜 License
-
-This project is licensed under the ISC License.
